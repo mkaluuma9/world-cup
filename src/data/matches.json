@@ -1,0 +1,506 @@
+[
+    {
+        "id": 1,
+        "team1": "Mexico",
+        "team2": "South Africa",
+        "group": "Group A",
+        "date": "2026-06-11T19:00:00Z"
+    },
+    {
+        "id": 2,
+        "team1": "Korea Republic",
+        "team2": "Czechia",
+        "group": "Group A",
+        "date": "2026-06-12T02:00:00Z"
+    },
+    {
+        "id": 3,
+        "team1": "Canada",
+        "team2": "Bosnia and Herzegovina",
+        "group": "Group B",
+        "date": "2026-06-12T19:00:00Z"
+    },
+    {
+        "id": 4,
+        "team1": "USA",
+        "team2": "Paraguay",
+        "group": "Group D",
+        "date": "2026-06-13T01:00:00Z"
+    },
+    {
+        "id": 5,
+        "team1": "Qatar",
+        "team2": "Switzerland",
+        "group": "Group B",
+        "date": "2026-06-13T19:00:00Z"
+    },
+    {
+        "id": 6,
+        "team1": "Brazil",
+        "team2": "Morocco",
+        "group": "Group C",
+        "date": "2026-06-13T22:00:00Z"
+    },
+    {
+        "id": 7,
+        "team1": "Haiti",
+        "team2": "Scotland",
+        "group": "Group C",
+        "date": "2026-06-14T01:00:00Z"
+    },
+    {
+        "id": 8,
+        "team1": "Australia",
+        "team2": "T\u00fcrkiye",
+        "group": "Group D",
+        "date": "2026-06-14T04:00:00Z"
+    },
+    {
+        "id": 9,
+        "team1": "Germany",
+        "team2": "Cura\u00e7ao",
+        "group": "Group E",
+        "date": "2026-06-14T17:00:00Z"
+    },
+    {
+        "id": 10,
+        "team1": "Netherlands",
+        "team2": "Japan",
+        "group": "Group F",
+        "date": "2026-06-14T20:00:00Z"
+    },
+    {
+        "id": 11,
+        "team1": "C\u00f4te d'Ivoire",
+        "team2": "Ecuador",
+        "group": "Group E",
+        "date": "2026-06-14T23:00:00Z"
+    },
+    {
+        "id": 12,
+        "team1": "Sweden",
+        "team2": "Tunisia",
+        "group": "Group F",
+        "date": "2026-06-15T02:00:00Z"
+    },
+    {
+        "id": 13,
+        "team1": "Spain",
+        "team2": "Cabo Verde",
+        "group": "Group H",
+        "date": "2026-06-15T16:00:00Z"
+    },
+    {
+        "id": 14,
+        "team1": "Belgium",
+        "team2": "Egypt",
+        "group": "Group G",
+        "date": "2026-06-15T19:00:00Z"
+    },
+    {
+        "id": 15,
+        "team1": "Saudi Arabia",
+        "team2": "Uruguay",
+        "group": "Group H",
+        "date": "2026-06-15T22:00:00Z"
+    },
+    {
+        "id": 16,
+        "team1": "IR Iran",
+        "team2": "New Zealand",
+        "group": "Group G",
+        "date": "2026-06-16T01:00:00Z"
+    },
+    {
+        "id": 17,
+        "team1": "France",
+        "team2": "Senegal",
+        "group": "Group I",
+        "date": "2026-06-16T19:00:00Z"
+    },
+    {
+        "id": 18,
+        "team1": "Iraq",
+        "team2": "Norway",
+        "group": "Group I",
+        "date": "2026-06-16T22:00:00Z"
+    },
+    {
+        "id": 19,
+        "team1": "Argentina",
+        "team2": "Algeria",
+        "group": "Group J",
+        "date": "2026-06-17T01:00:00Z"
+    },
+    {
+        "id": 20,
+        "team1": "Austria",
+        "team2": "Jordan",
+        "group": "Group J",
+        "date": "2026-06-17T04:00:00Z"
+    },
+    {
+        "id": 21,
+        "team1": "Portugal",
+        "team2": "Congo DR",
+        "group": "Group K",
+        "date": "2026-06-17T17:00:00Z"
+    },
+    {
+        "id": 22,
+        "team1": "England",
+        "team2": "Croatia",
+        "group": "Group L",
+        "date": "2026-06-17T20:00:00Z"
+    },
+    {
+        "id": 23,
+        "team1": "Ghana",
+        "team2": "Panama",
+        "group": "Group L",
+        "date": "2026-06-17T23:00:00Z"
+    },
+    {
+        "id": 24,
+        "team1": "Uzbekistan",
+        "team2": "Colombia",
+        "group": "Group K",
+        "date": "2026-06-18T02:00:00Z"
+    },
+    {
+        "id": 25,
+        "team1": "Czechia",
+        "team2": "South Africa",
+        "group": "Group A",
+        "date": "2026-06-18T16:00:00Z"
+    },
+    {
+        "id": 26,
+        "team1": "Switzerland",
+        "team2": "Bosnia and Herzegovina",
+        "group": "Group B",
+        "date": "2026-06-18T19:00:00Z"
+    },
+    {
+        "id": 27,
+        "team1": "Canada",
+        "team2": "Qatar",
+        "group": "Group B",
+        "date": "2026-06-18T22:00:00Z"
+    },
+    {
+        "id": 28,
+        "team1": "Mexico",
+        "team2": "Korea Republic",
+        "group": "Group A",
+        "date": "2026-06-19T01:00:00Z"
+    },
+    {
+        "id": 29,
+        "team1": "USA",
+        "team2": "Australia",
+        "group": "Group D",
+        "date": "2026-06-19T19:00:00Z"
+    },
+    {
+        "id": 30,
+        "team1": "Scotland",
+        "team2": "Morocco",
+        "group": "Group C",
+        "date": "2026-06-19T22:00:00Z"
+    },
+    {
+        "id": 31,
+        "team1": "Brazil",
+        "team2": "Haiti",
+        "group": "Group C",
+        "date": "2026-06-20T00:30:00Z"
+    },
+    {
+        "id": 32,
+        "team1": "T\u00fcrkiye",
+        "team2": "Paraguay",
+        "group": "Group D",
+        "date": "2026-06-20T03:00:00Z"
+    },
+    {
+        "id": 33,
+        "team1": "Netherlands",
+        "team2": "Sweden",
+        "group": "Group F",
+        "date": "2026-06-20T17:00:00Z"
+    },
+    {
+        "id": 34,
+        "team1": "Germany",
+        "team2": "C\u00f4te d'Ivoire",
+        "group": "Group E",
+        "date": "2026-06-20T20:00:00Z"
+    },
+    {
+        "id": 35,
+        "team1": "Ecuador",
+        "team2": "Cura\u00e7ao",
+        "group": "Group E",
+        "date": "2026-06-21T00:00:00Z"
+    },
+    {
+        "id": 36,
+        "team1": "Tunisia",
+        "team2": "Japan",
+        "group": "Group F",
+        "date": "2026-06-21T04:00:00Z"
+    },
+    {
+        "id": 37,
+        "team1": "Spain",
+        "team2": "Saudi Arabia",
+        "group": "Group H",
+        "date": "2026-06-21T16:00:00Z"
+    },
+    {
+        "id": 38,
+        "team1": "Belgium",
+        "team2": "IR Iran",
+        "group": "Group G",
+        "date": "2026-06-21T19:00:00Z"
+    },
+    {
+        "id": 39,
+        "team1": "Uruguay",
+        "team2": "Cabo Verde",
+        "group": "Group H",
+        "date": "2026-06-21T22:00:00Z"
+    },
+    {
+        "id": 40,
+        "team1": "New Zealand",
+        "team2": "Egypt",
+        "group": "Group G",
+        "date": "2026-06-22T01:00:00Z"
+    },
+    {
+        "id": 41,
+        "team1": "Argentina",
+        "team2": "Austria",
+        "group": "Group J",
+        "date": "2026-06-22T17:00:00Z"
+    },
+    {
+        "id": 42,
+        "team1": "France",
+        "team2": "Iraq",
+        "group": "Group I",
+        "date": "2026-06-22T21:00:00Z"
+    },
+    {
+        "id": 43,
+        "team1": "Norway",
+        "team2": "Senegal",
+        "group": "Group I",
+        "date": "2026-06-23T00:00:00Z"
+    },
+    {
+        "id": 44,
+        "team1": "Jordan",
+        "team2": "Algeria",
+        "group": "Group J",
+        "date": "2026-06-23T03:00:00Z"
+    },
+    {
+        "id": 45,
+        "team1": "Portugal",
+        "team2": "Uzbekistan",
+        "group": "Group K",
+        "date": "2026-06-23T17:00:00Z"
+    },
+    {
+        "id": 46,
+        "team1": "England",
+        "team2": "Ghana",
+        "group": "Group L",
+        "date": "2026-06-23T20:00:00Z"
+    },
+    {
+        "id": 47,
+        "team1": "Panama",
+        "team2": "Croatia",
+        "group": "Group L",
+        "date": "2026-06-23T23:00:00Z"
+    },
+    {
+        "id": 48,
+        "team1": "Colombia",
+        "team2": "Congo DR",
+        "group": "Group K",
+        "date": "2026-06-24T02:00:00Z"
+    },
+    {
+        "id": 49,
+        "team1": "Switzerland",
+        "team2": "Canada",
+        "group": "Group B",
+        "date": "2026-06-24T19:00:00Z"
+    },
+    {
+        "id": 50,
+        "team1": "Bosnia and Herzegovina",
+        "team2": "Qatar",
+        "group": "Group B",
+        "date": "2026-06-24T19:00:00Z"
+    },
+    {
+        "id": 51,
+        "team1": "Scotland",
+        "team2": "Brazil",
+        "group": "Group C",
+        "date": "2026-06-24T22:00:00Z"
+    },
+    {
+        "id": 52,
+        "team1": "Morocco",
+        "team2": "Haiti",
+        "group": "Group C",
+        "date": "2026-06-24T22:00:00Z"
+    },
+    {
+        "id": 53,
+        "team1": "Czechia",
+        "team2": "Mexico",
+        "group": "Group A",
+        "date": "2026-06-25T01:00:00Z"
+    },
+    {
+        "id": 54,
+        "team1": "South Africa",
+        "team2": "Korea Republic",
+        "group": "Group A",
+        "date": "2026-06-25T01:00:00Z"
+    },
+    {
+        "id": 55,
+        "team1": "Cura\u00e7ao",
+        "team2": "C\u00f4te d'Ivoire",
+        "group": "Group E",
+        "date": "2026-06-25T20:00:00Z"
+    },
+    {
+        "id": 56,
+        "team1": "Ecuador",
+        "team2": "Germany",
+        "group": "Group E",
+        "date": "2026-06-25T20:00:00Z"
+    },
+    {
+        "id": 57,
+        "team1": "Japan",
+        "team2": "Sweden",
+        "group": "Group F",
+        "date": "2026-06-25T23:00:00Z"
+    },
+    {
+        "id": 58,
+        "team1": "Tunisia",
+        "team2": "Netherlands",
+        "group": "Group F",
+        "date": "2026-06-25T23:00:00Z"
+    },
+    {
+        "id": 59,
+        "team1": "T\u00fcrkiye",
+        "team2": "USA",
+        "group": "Group D",
+        "date": "2026-06-26T02:00:00Z"
+    },
+    {
+        "id": 60,
+        "team1": "Paraguay",
+        "team2": "Australia",
+        "group": "Group D",
+        "date": "2026-06-26T02:00:00Z"
+    },
+    {
+        "id": 61,
+        "team1": "Norway",
+        "team2": "France",
+        "group": "Group I",
+        "date": "2026-06-26T19:00:00Z"
+    },
+    {
+        "id": 62,
+        "team1": "Senegal",
+        "team2": "Iraq",
+        "group": "Group I",
+        "date": "2026-06-26T19:00:00Z"
+    },
+    {
+        "id": 63,
+        "team1": "Cabo Verde",
+        "team2": "Saudi Arabia",
+        "group": "Group H",
+        "date": "2026-06-27T00:00:00Z"
+    },
+    {
+        "id": 64,
+        "team1": "Uruguay",
+        "team2": "Spain",
+        "group": "Group H",
+        "date": "2026-06-27T00:00:00Z"
+    },
+    {
+        "id": 65,
+        "team1": "Egypt",
+        "team2": "IR Iran",
+        "group": "Group G",
+        "date": "2026-06-27T03:00:00Z"
+    },
+    {
+        "id": 66,
+        "team1": "New Zealand",
+        "team2": "Belgium",
+        "group": "Group G",
+        "date": "2026-06-27T03:00:00Z"
+    },
+    {
+        "id": 67,
+        "team1": "Panama",
+        "team2": "England",
+        "group": "Group L",
+        "date": "2026-06-27T21:00:00Z"
+    },
+    {
+        "id": 68,
+        "team1": "Croatia",
+        "team2": "Ghana",
+        "group": "Group L",
+        "date": "2026-06-27T21:00:00Z"
+    },
+    {
+        "id": 69,
+        "team1": "Colombia",
+        "team2": "Portugal",
+        "group": "Group K",
+        "date": "2026-06-27T23:30:00Z"
+    },
+    {
+        "id": 70,
+        "team1": "Congo DR",
+        "team2": "Uzbekistan",
+        "group": "Group K",
+        "date": "2026-06-27T23:30:00Z"
+    },
+    {
+        "id": 71,
+        "team1": "Algeria",
+        "team2": "Austria",
+        "group": "Group J",
+        "date": "2026-06-28T02:00:00Z"
+    },
+    {
+        "id": 72,
+        "team1": "Jordan",
+        "team2": "Argentina",
+        "group": "Group J",
+        "date": "2026-06-28T02:00:00Z"
+    }
+]
