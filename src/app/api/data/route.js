@@ -1,10 +1,10 @@
 import { NextResponse } from 'next/server';
-import { kv } from '@vercel/kv';
+import { createClient } from 'redis';
 import fs from 'fs';
 import path from 'path';
 import matches from '@/data/matches.json';
 
-const isKVEnabled = !!process.env.KV_REST_API_URL;
+const isRedisEnabled = !!process.env.REDIS_URL;
 const LOCAL_FILE = path.join(process.cwd(), 'local_db.json');
 
 const INITIAL_USERS = {
@@ -13,10 +13,22 @@ const INITIAL_USERS = {
     "Fahad": "7806", "Haan": "7612", "Yaya": "8250", "Badru": "8423"
 };
 
+let redisClient = null;
+
+async function getRedisClient() {
+    if (!redisClient) {
+        redisClient = createClient({ url: process.env.REDIS_URL });
+        redisClient.on('error', err => console.error('Redis Client Error', err));
+        await redisClient.connect();
+    }
+    return redisClient;
+}
+
 async function readData() {
-    if (isKVEnabled) {
-        const data = await kv.get('wc_data');
-        return data || { predictions: {}, results: {}, users: null };
+    if (isRedisEnabled) {
+        const client = await getRedisClient();
+        const dataStr = await client.get('wc_data');
+        return dataStr ? JSON.parse(dataStr) : { predictions: {}, results: {}, users: null };
     } else {
         if (fs.existsSync(LOCAL_FILE)) {
             return JSON.parse(fs.readFileSync(LOCAL_FILE, 'utf8'));
@@ -26,8 +38,9 @@ async function readData() {
 }
 
 async function writeData(data) {
-    if (isKVEnabled) {
-        await kv.set('wc_data', data);
+    if (isRedisEnabled) {
+        const client = await getRedisClient();
+        await client.set('wc_data', JSON.stringify(data));
     } else {
         fs.writeFileSync(LOCAL_FILE, JSON.stringify(data, null, 2));
     }
