@@ -260,9 +260,18 @@ export default function Home() {
                                 <div key={m.id} style={{marginBottom: '1rem'}}>
                                     <div className="card" style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between'}}>
                                         <div>
-                                            <div style={{fontWeight: 'bold'}}>{m.team1} vs {m.team2}</div>
-                                            <div style={{fontSize: '0.8rem', color: 'var(--text-muted)'}}>{formatDate(m.date)}</div>
-                                        </div>
+    <div style={{fontWeight: 'bold'}}>
+        {m.team1} vs {m.team2}
+    </div>
+
+    <div style={{fontSize: '0.8rem', color: 'var(--text-muted)'}}>
+        {formatDate(m.date)}
+    </div>
+
+    <div style={{fontSize: '0.7rem', color: '#94a3b8'}}>
+        Match ID: {m.id}
+    </div>
+</div>
                                         <div style={{display: 'flex', gap: '0.5rem', alignItems: 'center', flexWrap: 'wrap'}}>
                                             <input type="number" id={`res-t1-${m.id}`} defaultValue={res ? res.t1 : ''} style={{width: '50px'}} min="0" />
                                             -
