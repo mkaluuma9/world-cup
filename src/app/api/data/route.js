@@ -70,22 +70,27 @@ export async function POST(req) {
     if (!data.results) data.results = {};
 
     if (body.type === 'PREDICTION') {
-        const matchId = body.key.split('-')[0];
-        const match = matches.find(m => m.id == matchId);
-        if (match) {
-            const lockTime = new Date(new Date(match.date).getTime() - 30 * 60000);
-            if (new Date() > lockTime) {
-                return NextResponse.json({ success: false, error: 'Match is locked' }, { status: 400 });
-            }
+    const matchId = body.key.split('-')[0];
+    const match = matches.find(m => m.id == matchId);
+    if (match) {
+        const lockTime = new Date(new Date(match.date).getTime() - 30 * 60000);
+        if (new Date() > lockTime) {
+            return NextResponse.json({ success: false, error: 'Match is locked' }, { status: 400 });
         }
-        data.predictions[body.key] = { t1: body.t1, t2: body.t2 };
-    } else if (body.type === 'RESULT') {
-        data.results[body.matchId] = { t1: body.t1, t2: body.t2 };
-    } else if (body.type === 'ADD_USER') {
-        if (!data.users) data.users = INITIAL_USERS;
-        const pin = Math.floor(1000 + Math.random() * 9000).toString();
-        data.users[body.user] = pin;
     }
+    data.predictions[body.key] = { t1: body.t1, t2: body.t2 };
+
+} else if (body.type === 'RESULT') {
+    data.results[body.matchId] = { t1: body.t1, t2: body.t2 };
+
+} else if (body.type === 'DELETE_RESULT') {
+    delete data.results[body.matchId];
+
+} else if (body.type === 'ADD_USER') {
+    if (!data.users) data.users = INITIAL_USERS;
+    const pin = Math.floor(1000 + Math.random() * 9000).toString();
+    data.users[body.user] = pin;
+}
 
     await writeData(data);
     return NextResponse.json({ success: true });
