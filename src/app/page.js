@@ -53,7 +53,8 @@ export default function Home() {
 
         const response = await fetch('/api/data', {
             method: 'POST',
-            body: JSON.stringify({ type: 'PREDICTION', key: `${matchId}-${currentUser}`, t1, t2 })
+            // body: JSON.stringify({ type: 'PREDICTION', key: `${matchId}-${currentUser}`, t1, t2 })
+            body: JSON.stringify({ type: 'PREDICTION', key: `${matchId}-${currentUser}`, t1, t2, user: currentUser })
         }).then(r => r.json());
 
         if (response.error) {
