@@ -254,6 +254,7 @@ export default function Home() {
                                 <table style={{width: '100%', borderCollapse: 'collapse', textAlign: 'left', minWidth: '400px'}}>
                                     <thead>
                                         <tr style={{borderBottom: '1px solid #334155', color: 'var(--text-muted)'}}>
+                                            <th style={{padding: '0.5rem'}}>#</th>
                                             <th style={{padding: '0.5rem'}}>Player</th>
                                             <th style={{padding: '0.5rem'}}>Total Points</th>
                                             <th style={{padding: '0.5rem'}}>Predicted</th>
@@ -284,10 +285,11 @@ export default function Home() {
                                                 return adminScores[b] - adminScores[a];
                                             });
 
-                                            return sortedAdminUsers.map(u => {
+                                            return sortedAdminUsers.map((u, idx) => {
                                                 const avg = adminGames[u] > 0 ? getAvg(u).toFixed(2) : '0.00';
                                                 return (
                                                     <tr key={u} style={{borderBottom: '1px solid #334155'}}>
+                                                        <td style={{padding: '0.5rem', color: 'var(--text-muted)'}}>{idx + 1}.</td>
                                                         <td style={{padding: '0.5rem'}}>{u}</td>
                                                         <td style={{padding: '0.5rem', color: 'var(--primary)', fontWeight: 'bold'}}>{adminScores[u]}</td>
                                                         <td style={{padding: '0.5rem'}}>{adminGames[u]}</td>
