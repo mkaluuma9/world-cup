@@ -214,7 +214,7 @@ export default function Home() {
                     <button onClick={silentRefresh} className="outline" style={{marginRight: '0.5rem'}}>Refresh ↻</button>
                     <button onClick={() => setView('dashboard')}>Matches</button>
                     <button onClick={() => setView('leaderboard')}>Leaderboard</button>
-                    <button onClick={() => setView('knockout')}>Knockout</button>
+                    {currentUser === 'Mahad' && <button onClick={() => setView('knockout')}>Knockout</button>}
                     {currentUser === 'Mahad' && <button onClick={() => setView('admin')}>Admin</button>}
                     <button onClick={logout} className="outline">Logout</button>
                 </nav>
@@ -298,7 +298,7 @@ export default function Home() {
                     );
                 })()}
 
-{view === 'knockout' && (() => {
+{view === 'knockout' && currentUser === 'Mahad' && (() => {
                     const seedsList = getSeeds();
                     
                     const r32Seeds = [
@@ -444,18 +444,27 @@ export default function Home() {
                                                 return pairs.map((pair, pIdx) => (
                                                     <div key={pIdx} style={{position: 'relative', display: 'flex', flexDirection: 'column', flexGrow: 1, justifyContent: 'space-around', margin: '0.5rem 0'}}>
                                                         <div style={{display: 'flex', alignItems: 'center'}}>{renderMatchCard(pair[0])}</div>
-                                                        <div style={{display: 'flex', alignItems: 'center'}}>{renderMatchCard(pair[1])}</div>
+                                                        {pair[1] && <div style={{display: 'flex', alignItems: 'center'}}>{renderMatchCard(pair[1])}</div>}
                                                         
-                                                        {col.side === 'left' ? (
+                                                        {pair[1] && col.side === 'left' && (
                                                             <>
                                                                 <div style={{position: 'absolute', right: '-1.5rem', top: '25%', bottom: '25%', width: '1.5rem', borderRight: '2px solid #cbd5e1', borderTop: '2px solid #cbd5e1', borderBottom: '2px solid #cbd5e1', zIndex: 1, pointerEvents: 'none'}}></div>
                                                                 <div style={{position: 'absolute', right: '-3rem', top: '50%', width: '1.5rem', borderTop: '2px solid #cbd5e1', zIndex: 1, pointerEvents: 'none'}}></div>
                                                             </>
-                                                        ) : (
+                                                        )}
+                                                        {pair[1] && col.side === 'right' && (
                                                             <>
                                                                 <div style={{position: 'absolute', left: '-1.5rem', top: '25%', bottom: '25%', width: '1.5rem', borderLeft: '2px solid #cbd5e1', borderTop: '2px solid #cbd5e1', borderBottom: '2px solid #cbd5e1', zIndex: 1, pointerEvents: 'none'}}></div>
                                                                 <div style={{position: 'absolute', left: '-3rem', top: '50%', width: '1.5rem', borderTop: '2px solid #cbd5e1', zIndex: 1, pointerEvents: 'none'}}></div>
                                                             </>
+                                                        )}
+                                                        
+                                                        {/* If there's no pair[1], it's a single match in the column (like SF), so just draw a straight line to the final */}
+                                                        {!pair[1] && col.side === 'left' && (
+                                                            <div style={{position: 'absolute', right: '-3rem', top: '50%', width: '3rem', borderTop: '2px solid #cbd5e1', zIndex: 1, pointerEvents: 'none'}}></div>
+                                                        )}
+                                                        {!pair[1] && col.side === 'right' && (
+                                                            <div style={{position: 'absolute', left: '-3rem', top: '50%', width: '3rem', borderTop: '2px solid #cbd5e1', zIndex: 1, pointerEvents: 'none'}}></div>
                                                         )}
                                                     </div>
                                                 ));
