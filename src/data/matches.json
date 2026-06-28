@@ -1,5 +1,117 @@
 [
     {
+        "id": 73,
+        "team1": "South Africa",
+        "team2": "Canada",
+        "group": "Round of 32",
+        "date": "2026-06-28T19:00:00Z"
+    },
+    {
+        "id": 74,
+        "team1": "Brazil",
+        "team2": "Japan",
+        "group": "Round of 32",
+        "date": "2026-06-29T17:00:00Z"
+    },
+    {
+        "id": 75,
+        "team1": "Germany",
+        "team2": "Paraguay",
+        "group": "Round of 32",
+        "date": "2026-06-29T20:30:00Z"
+    },
+    {
+        "id": 76,
+        "team1": "Netherlands",
+        "team2": "Morocco",
+        "group": "Round of 32",
+        "date": "2026-06-30T01:00:00Z"
+    },
+    {
+        "id": 77,
+        "team1": "Côte d'Ivoire",
+        "team2": "Norway",
+        "group": "Round of 32",
+        "date": "2026-06-30T17:00:00Z"
+    },
+    {
+        "id": 78,
+        "team1": "France",
+        "team2": "Sweden",
+        "group": "Round of 32",
+        "date": "2026-06-30T21:00:00Z"
+    },
+    {
+        "id": 79,
+        "team1": "Mexico",
+        "team2": "Ecuador",
+        "group": "Round of 32",
+        "date": "2026-07-01T01:00:00Z"
+    },
+    {
+        "id": 80,
+        "team1": "England",
+        "team2": "Congo DR",
+        "group": "Round of 32",
+        "date": "2026-07-01T16:00:00Z"
+    },
+    {
+        "id": 81,
+        "team1": "Belgium",
+        "team2": "Senegal",
+        "group": "Round of 32",
+        "date": "2026-07-01T20:00:00Z"
+    },
+    {
+        "id": 82,
+        "team1": "USA",
+        "team2": "Bosnia and Herzegovina",
+        "group": "Round of 32",
+        "date": "2026-07-02T00:00:00Z"
+    },
+    {
+        "id": 83,
+        "team1": "Spain",
+        "team2": "Austria",
+        "group": "Round of 32",
+        "date": "2026-07-02T19:00:00Z"
+    },
+    {
+        "id": 84,
+        "team1": "Portugal",
+        "team2": "Croatia",
+        "group": "Round of 32",
+        "date": "2026-07-02T23:00:00Z"
+    },
+    {
+        "id": 85,
+        "team1": "Switzerland",
+        "team2": "Algeria",
+        "group": "Round of 32",
+        "date": "2026-07-03T03:00:00Z"
+    },
+    {
+        "id": 86,
+        "team1": "Australia",
+        "team2": "Egypt",
+        "group": "Round of 32",
+        "date": "2026-07-03T18:00:00Z"
+    },
+    {
+        "id": 87,
+        "team1": "Argentina",
+        "team2": "Cabo Verde",
+        "group": "Round of 32",
+        "date": "2026-07-03T22:00:00Z"
+    },
+    {
+        "id": 88,
+        "team1": "Colombia",
+        "team2": "Ghana",
+        "group": "Round of 32",
+        "date": "2026-07-04T01:30:00Z"
+    },
+    {
         "id": 1,
         "team1": "Mexico",
         "team2": "South Africa",
@@ -51,14 +163,14 @@
     {
         "id": 8,
         "team1": "Australia",
-        "team2": "T\u00fcrkiye",
+        "team2": "Türkiye",
         "group": "Group D",
         "date": "2026-06-14T04:00:00Z"
     },
     {
         "id": 9,
         "team1": "Germany",
-        "team2": "Cura\u00e7ao",
+        "team2": "Curaçao",
         "group": "Group E",
         "date": "2026-06-14T17:00:00Z"
     },
@@ -71,7 +183,7 @@
     },
     {
         "id": 11,
-        "team1": "C\u00f4te d'Ivoire",
+        "team1": "Côte d'Ivoire",
         "team2": "Ecuador",
         "group": "Group E",
         "date": "2026-06-14T23:00:00Z"
@@ -218,7 +330,7 @@
     },
     {
         "id": 32,
-        "team1": "T\u00fcrkiye",
+        "team1": "Türkiye",
         "team2": "Paraguay",
         "group": "Group D",
         "date": "2026-06-20T03:00:00Z"
@@ -233,14 +345,14 @@
     {
         "id": 34,
         "team1": "Germany",
-        "team2": "C\u00f4te d'Ivoire",
+        "team2": "Côte d'Ivoire",
         "group": "Group E",
         "date": "2026-06-20T20:00:00Z"
     },
     {
         "id": 35,
         "team1": "Ecuador",
-        "team2": "Cura\u00e7ao",
+        "team2": "Curaçao",
         "group": "Group E",
         "date": "2026-06-21T00:00:00Z"
     },
@@ -379,8 +491,8 @@
     },
     {
         "id": 55,
-        "team1": "Cura\u00e7ao",
-        "team2": "C\u00f4te d'Ivoire",
+        "team1": "Curaçao",
+        "team2": "Côte d'Ivoire",
         "group": "Group E",
         "date": "2026-06-25T20:00:00Z"
     },
@@ -407,7 +519,7 @@
     },
     {
         "id": 59,
-        "team1": "T\u00fcrkiye",
+        "team1": "Türkiye",
         "team2": "USA",
         "group": "Group D",
         "date": "2026-06-26T02:00:00Z"
