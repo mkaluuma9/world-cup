@@ -13,6 +13,7 @@ export default function Home() {
     const [loading, setLoading] = useState(true);
     const [newUser, setNewUser] = useState('');
     const [adminFeedback, setAdminFeedback] = useState({});
+    const [adminSort, setAdminSort] = useState('total');
 
     useEffect(() => {
         fetch('/api/data')
@@ -241,6 +242,65 @@ export default function Home() {
 
                 {view === 'admin' && currentUser === 'Mahad' && (
                     <div>
+                        <div className="card" style={{marginBottom: '2rem'}}>
+                            <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem', flexWrap: 'wrap', gap: '1rem'}}>
+                                <h2 style={{color: 'var(--primary)', margin: 0}}>Player Stats (Completed Games)</h2>
+                                <select value={adminSort} onChange={e => setAdminSort(e.target.value)} style={{padding: '0.5rem', borderRadius: '6px', background: 'transparent', color: 'inherit', border: '1px solid #334155'}}>
+                                    <option value="total" style={{color: '#000'}}>Sort by Total Points</option>
+                                    <option value="average" style={{color: '#000'}}>Sort by Points Average</option>
+                                </select>
+                            </div>
+                            <div style={{overflowX: 'auto'}}>
+                                <table style={{width: '100%', borderCollapse: 'collapse', textAlign: 'left', minWidth: '400px'}}>
+                                    <thead>
+                                        <tr style={{borderBottom: '1px solid #334155', color: 'var(--text-muted)'}}>
+                                            <th style={{padding: '0.5rem'}}>Player</th>
+                                            <th style={{padding: '0.5rem'}}>Total Points</th>
+                                            <th style={{padding: '0.5rem'}}>Predicted</th>
+                                            <th style={{padding: '0.5rem'}}>Average</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {(() => {
+                                            const adminScores = {};
+                                            const adminGames = {};
+                                            Object.keys(users).forEach(u => { adminScores[u] = 0; adminGames[u] = 0; });
+                                            Object.keys(results).forEach(matchId => {
+                                                const res = results[matchId];
+                                                Object.keys(users).forEach(u => {
+                                                    const pred = predictions[`${matchId}-${u}`];
+                                                    if (pred) {
+                                                        adminGames[u] += 1;
+                                                        adminScores[u] += calculatePoints(pred, res);
+                                                    }
+                                                });
+                                            });
+                                            const getAvg = (u) => adminGames[u] > 0 ? (adminScores[u] / adminGames[u]) : 0;
+                                            
+                                            const sortedAdminUsers = Object.keys(users).sort((a, b) => {
+                                                if (adminSort === 'average') {
+                                                    return getAvg(b) - getAvg(a);
+                                                }
+                                                return adminScores[b] - adminScores[a];
+                                            });
+
+                                            return sortedAdminUsers.map(u => {
+                                                const avg = adminGames[u] > 0 ? getAvg(u).toFixed(2) : '0.00';
+                                                return (
+                                                    <tr key={u} style={{borderBottom: '1px solid #334155'}}>
+                                                        <td style={{padding: '0.5rem'}}>{u}</td>
+                                                        <td style={{padding: '0.5rem', color: 'var(--primary)', fontWeight: 'bold'}}>{adminScores[u]}</td>
+                                                        <td style={{padding: '0.5rem'}}>{adminGames[u]}</td>
+                                                        <td style={{padding: '0.5rem'}}>{avg}</td>
+                                                    </tr>
+                                                );
+                                            });
+                                        })()}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
                         <div className="card" style={{marginBottom: '2rem'}}>
                             <h2 style={{color: 'var(--primary)', marginBottom: '1rem'}}>User Passwords</h2>
                             <div style={{display: 'flex', gap: '1rem', marginBottom: '1.5rem', flexWrap: 'wrap'}}>
