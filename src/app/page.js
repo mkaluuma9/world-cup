@@ -315,8 +315,12 @@ export default function Home() {
                     const fComplete = isPhaseComplete('Final');
 
                     const getWinner = (u1, u2, s1, s2, phase, complete) => {
-                        if (!u1) return u2;
-                        if (!u2) return u1;
+                        if (phase === 'Round of 32') {
+                            if (!u1) return u2;
+                            if (!u2) return u1;
+                        } else {
+                            if (!u1 || !u2) return null;
+                        }
                         if (!complete) return null;
                         return getMatchLeader(u1, u2, s1, s2, phase);
                     };
