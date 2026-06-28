@@ -219,7 +219,7 @@ export default function Home() {
                     <button onClick={logout} className="outline">Logout</button>
                 </nav>
             </header>
-            <main>
+            <main style={{ maxWidth: view === 'knockout' ? '100%' : '800px', padding: view === 'knockout' ? '1rem' : '2rem', width: '100%' }}>
                 {view === 'dashboard' && (
                     <div>
                         <h2 style={{fontSize: '1.25rem', color: 'var(--primary)', marginBottom: '1.5rem'}}>Dashboard - {currentUser}</h2>
@@ -404,7 +404,7 @@ export default function Home() {
                         const name2 = m.u2 || (m.phase === 'Round of 32' ? 'Bye' : 'TBD');
                         
                         return (
-                            <div className="card" style={{margin: '0.5rem 0', width: '220px', fontSize: '0.9rem', padding: '1rem', borderLeft: '4px solid var(--primary)', position: 'relative', zIndex: 2}}>
+                            <div className="card" style={{margin: '0.5rem 0', width: '150px', fontSize: '0.8rem', padding: '0.75rem', borderLeft: '4px solid var(--primary)', position: 'relative', zIndex: 2}}>
                                 <div style={{display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid #e5e7eb', paddingBottom: '0.5rem', marginBottom: '0.5rem'}}>
                                     <div style={{fontWeight: m.leader === m.u1 && m.u1 ? 'bold' : 'normal', color: m.leader === m.u1 && m.u1 ? 'var(--success)' : 'inherit', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis'}}>
                                         {m.s1 && <span style={{color: '#9ca3af', fontSize: '0.75rem', marginRight: '0.4rem'}}>#{m.s1}</span>}
@@ -425,7 +425,7 @@ export default function Home() {
 
                     return (
                         <div style={{overflowX: 'auto', padding: '1rem 0', background: 'var(--card-bg)', borderRadius: '8px', border: '1px solid #e5e7eb'}}>
-                            <div style={{display: 'flex', gap: '3rem', minWidth: 'max-content', padding: '1rem', justifyContent: 'center'}}>
+                            <div style={{display: 'flex', gap: '1rem', minWidth: 'max-content', padding: '1rem', justifyContent: 'center'}}>
                                 {columns.map((col, cIdx) => (
                                     <div key={`${col.name}-${cIdx}`} style={{display: 'flex', flexDirection: 'column'}}>
                                         <h3 style={{textAlign: 'center', color: 'var(--primary)', marginBottom: '1rem', fontSize: '1rem', height: '2rem'}}>{col.name}</h3>
