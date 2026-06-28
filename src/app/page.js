@@ -384,12 +384,16 @@ export default function Home() {
                     const f_winner = getWinner(f_u1, f_u2, f_s1, f_s2, 'Final', fComplete);
                     const finalMatch = { id: `F-0`, u1: f_u1, s1: f_s1, u2: f_u2, s2: f_s2, leader: f_leader, winner: f_winner, phase: 'Final' };
 
-                    const rounds = [
-                        { name: 'Round of 32', matches: r32Matches },
-                        { name: 'Round of 16', matches: r16Matches },
-                        { name: 'Quarter-finals', matches: qfMatches },
-                        { name: 'Semi-finals', matches: sfMatches },
-                        { name: 'Final', matches: [finalMatch] }
+                    const columns = [
+                        { name: 'Round of 32', matches: r32Matches.slice(0, 8), side: 'left' },
+                        { name: 'Round of 16', matches: r16Matches.slice(0, 4), side: 'left' },
+                        { name: 'Quarter-finals', matches: qfMatches.slice(0, 2), side: 'left' },
+                        { name: 'Semi-finals', matches: sfMatches.slice(0, 1), side: 'left' },
+                        { name: 'Final', matches: [finalMatch], side: 'center' },
+                        { name: 'Semi-finals', matches: sfMatches.slice(1, 2), side: 'right' },
+                        { name: 'Quarter-finals', matches: qfMatches.slice(2, 4), side: 'right' },
+                        { name: 'Round of 16', matches: r16Matches.slice(4, 8), side: 'right' },
+                        { name: 'Round of 32', matches: r32Matches.slice(8, 16), side: 'right' }
                     ];
 
                     const renderMatchCard = (m) => {
@@ -421,20 +425,20 @@ export default function Home() {
 
                     return (
                         <div style={{overflowX: 'auto', padding: '1rem 0', background: 'var(--card-bg)', borderRadius: '8px', border: '1px solid #e5e7eb'}}>
-                            <div style={{display: 'flex', gap: '3rem', minWidth: 'max-content', padding: '1rem'}}>
-                                {rounds.map((round, rIdx) => (
-                                    <div key={round.name} style={{display: 'flex', flexDirection: 'column'}}>
-                                        <h3 style={{textAlign: 'center', color: 'var(--primary)', marginBottom: '1rem', fontSize: '1rem', height: '2rem'}}>{round.name}</h3>
+                            <div style={{display: 'flex', gap: '3rem', minWidth: 'max-content', padding: '1rem', justifyContent: 'center'}}>
+                                {columns.map((col, cIdx) => (
+                                    <div key={`${col.name}-${cIdx}`} style={{display: 'flex', flexDirection: 'column'}}>
+                                        <h3 style={{textAlign: 'center', color: 'var(--primary)', marginBottom: '1rem', fontSize: '1rem', height: '2rem'}}>{col.name}</h3>
                                         
                                         <div style={{display: 'flex', flexDirection: 'column', flexGrow: 1, justifyContent: 'space-around'}}>
                                             {(() => {
-                                                if (rIdx === rounds.length - 1) {
-                                                    return round.matches.map(m => <div key={m.id} style={{display: 'flex', alignItems: 'center', flexGrow: 1}}>{renderMatchCard(m)}</div>);
+                                                if (col.side === 'center') {
+                                                    return col.matches.map(m => <div key={m.id} style={{display: 'flex', alignItems: 'center', flexGrow: 1}}>{renderMatchCard(m)}</div>);
                                                 }
                                                 
                                                 const pairs = [];
-                                                for(let i=0; i<round.matches.length; i+=2) {
-                                                    pairs.push([round.matches[i], round.matches[i+1]]);
+                                                for(let i=0; i<col.matches.length; i+=2) {
+                                                    pairs.push([col.matches[i], col.matches[i+1]]);
                                                 }
                                                 
                                                 return pairs.map((pair, pIdx) => (
@@ -442,9 +446,17 @@ export default function Home() {
                                                         <div style={{display: 'flex', alignItems: 'center'}}>{renderMatchCard(pair[0])}</div>
                                                         <div style={{display: 'flex', alignItems: 'center'}}>{renderMatchCard(pair[1])}</div>
                                                         
-                                                        {/* Connector to next round */}
-                                                        <div style={{position: 'absolute', right: '-1.5rem', top: '25%', bottom: '25%', width: '1.5rem', borderRight: '2px solid #cbd5e1', borderTop: '2px solid #cbd5e1', borderBottom: '2px solid #cbd5e1', zIndex: 1, pointerEvents: 'none'}}></div>
-                                                        <div style={{position: 'absolute', right: '-3rem', top: '50%', width: '1.5rem', borderTop: '2px solid #cbd5e1', zIndex: 1, pointerEvents: 'none'}}></div>
+                                                        {col.side === 'left' ? (
+                                                            <>
+                                                                <div style={{position: 'absolute', right: '-1.5rem', top: '25%', bottom: '25%', width: '1.5rem', borderRight: '2px solid #cbd5e1', borderTop: '2px solid #cbd5e1', borderBottom: '2px solid #cbd5e1', zIndex: 1, pointerEvents: 'none'}}></div>
+                                                                <div style={{position: 'absolute', right: '-3rem', top: '50%', width: '1.5rem', borderTop: '2px solid #cbd5e1', zIndex: 1, pointerEvents: 'none'}}></div>
+                                                            </>
+                                                        ) : (
+                                                            <>
+                                                                <div style={{position: 'absolute', left: '-1.5rem', top: '25%', bottom: '25%', width: '1.5rem', borderLeft: '2px solid #cbd5e1', borderTop: '2px solid #cbd5e1', borderBottom: '2px solid #cbd5e1', zIndex: 1, pointerEvents: 'none'}}></div>
+                                                                <div style={{position: 'absolute', left: '-3rem', top: '50%', width: '1.5rem', borderTop: '2px solid #cbd5e1', zIndex: 1, pointerEvents: 'none'}}></div>
+                                                            </>
+                                                        )}
                                                     </div>
                                                 ));
                                             })()}
