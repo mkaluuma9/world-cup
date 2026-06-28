@@ -119,6 +119,63 @@ export default function Home() {
         return d.toLocaleString([], { timeZone: 'Africa/Nairobi', weekday: 'short', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' }) + ' (EAT)';
     };
 
+
+    const getSeeds = () => {
+        const gsScores = {};
+        const userList = Object.keys(users);
+        userList.forEach(u => gsScores[u] = 0);
+        
+        matches.forEach(m => {
+            if (m.group.startsWith('Group') && results[m.id]) {
+                const res = results[m.id];
+                userList.forEach(u => {
+                    const pred = predictions[`${m.id}-${u}`];
+                    gsScores[u] += calculatePoints(pred, res);
+                });
+            }
+        });
+        
+        const sortedUsers = [...userList].sort((a, b) => gsScores[b] - gsScores[a]);
+        return sortedUsers;
+    };
+
+    const isPhaseComplete = (phase) => {
+        const phaseMatches = matches.filter(m => m.group === phase);
+        if (phaseMatches.length === 0) return false;
+        return phaseMatches.every(m => results[m.id]);
+    };
+
+    const getPhaseStats = (u, phase) => {
+        let pts = 0;
+        let exacts = 0;
+        matches.filter(m => m.group === phase).forEach(m => {
+            if (results[m.id]) {
+                const pred = predictions[`${m.id}-${u}`];
+                const p = calculatePoints(pred, results[m.id]);
+                pts += p;
+                if (p === 5) exacts += 1;
+            }
+        });
+        return { pts, exacts };
+    };
+
+    const getMatchLeader = (u1, u2, s1, s2, phase) => {
+        if (!u1 && !u2) return null;
+        if (!u1) return u2;
+        if (!u2) return u1;
+        
+        const st1 = getPhaseStats(u1, phase);
+        const st2 = getPhaseStats(u2, phase);
+        
+        if (st1.pts > st2.pts) return u1;
+        if (st2.pts > st1.pts) return u2;
+        
+        if (st1.exacts > st2.exacts) return u1;
+        if (st2.exacts > st1.exacts) return u2;
+        
+        return s1 < s2 ? u1 : u2;
+    };
+
     if (loading) return <div style={{padding: '2rem', textAlign: 'center'}}>Loading App...</div>;
 
     if (!currentUser) {
