@@ -219,7 +219,7 @@ export default function Home() {
                     <button onClick={logout} className="outline">Logout</button>
                 </nav>
             </header>
-            <main style={{ maxWidth: view === 'knockout' ? '100%' : '800px', padding: view === 'knockout' ? '1rem' : '2rem', width: '100%' }}>
+            <main style={{ maxWidth: view === 'knockout' ? '90%' : '800px', padding: view === 'knockout' ? '1rem' : '2rem', width: '100%', margin: '0 auto' }}>
                 {view === 'dashboard' && (
                     <div>
                         <h2 style={{fontSize: '1.25rem', color: 'var(--primary)', marginBottom: '1.5rem'}}>Dashboard - {currentUser}</h2>
