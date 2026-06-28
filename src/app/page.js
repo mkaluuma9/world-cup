@@ -219,7 +219,7 @@ export default function Home() {
                     <button onClick={logout} className="outline">Logout</button>
                 </nav>
             </header>
-            <main style={{ maxWidth: view === 'knockout' ? '90%' : '800px', padding: view === 'knockout' ? '1rem' : '2rem', width: '100%', margin: '0 auto' }}>
+            <main style={{ maxWidth: view === 'knockout' ? '100%' : '800px', padding: view === 'knockout' ? '1rem' : '2rem', width: '100%', margin: '0 auto' }}>
                 {view === 'dashboard' && (
                     <div>
                         <h2 style={{fontSize: '1.25rem', color: 'var(--primary)', marginBottom: '1.5rem'}}>Dashboard - {currentUser}</h2>
@@ -425,7 +425,7 @@ export default function Home() {
 
                     return (
                         <div style={{overflowX: 'auto', padding: '1rem 0', background: 'var(--card-bg)', borderRadius: '8px', border: '1px solid #e5e7eb'}}>
-                            <div style={{display: 'flex', gap: '1rem', minWidth: 'max-content', padding: '1rem', justifyContent: 'center'}}>
+                            <div style={{display: 'flex', gap: '1rem', minWidth: 'max-content', padding: '1rem', justifyContent: 'center', zoom: '0.9'}}>
                                 {columns.map((col, cIdx) => (
                                     <div key={`${col.name}-${cIdx}`} style={{display: 'flex', flexDirection: 'column'}}>
                                         <h3 style={{textAlign: 'center', color: 'var(--primary)', marginBottom: '1rem', fontSize: '1rem', height: '2rem'}}>{col.name}</h3>
