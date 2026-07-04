@@ -1,5 +1,61 @@
 [
     {
+        "id": 89,
+        "team1": "Canada",
+        "team2": "Brazil",
+        "group": "Round of 16",
+        "date": "2026-07-04T17:00:00Z"
+    },
+    {
+        "id": 90,
+        "team1": "Paraguay",
+        "team2": "Morocco",
+        "group": "Round of 16",
+        "date": "2026-07-04T21:00:00Z"
+    },
+    {
+        "id": 91,
+        "team1": "Norway",
+        "team2": "France",
+        "group": "Round of 16",
+        "date": "2026-07-05T17:00:00Z"
+    },
+    {
+        "id": 92,
+        "team1": "Mexico",
+        "team2": "England",
+        "group": "Round of 16",
+        "date": "2026-07-05T21:00:00Z"
+    },
+    {
+        "id": 93,
+        "team1": "Senegal",
+        "team2": "USA",
+        "group": "Round of 16",
+        "date": "2026-07-06T17:00:00Z"
+    },
+    {
+        "id": 94,
+        "team1": "Spain",
+        "team2": "Portugal",
+        "group": "Round of 16",
+        "date": "2026-07-06T21:00:00Z"
+    },
+    {
+        "id": 95,
+        "team1": "Switzerland",
+        "team2": "Egypt",
+        "group": "Round of 16",
+        "date": "2026-07-07T17:00:00Z"
+    },
+    {
+        "id": 96,
+        "team1": "Cabo Verde",
+        "team2": "Colombia",
+        "group": "Round of 16",
+        "date": "2026-07-07T21:00:00Z"
+    },
+    {
         "id": 73,
         "team1": "South Africa",
         "team2": "Canada",
