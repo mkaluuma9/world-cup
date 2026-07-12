@@ -159,6 +159,17 @@ export default function Home() {
         return { pts, exacts };
     };
 
+    const getTotalPoints = (u) => {
+        let pts = 0;
+        matches.forEach(m => {
+            if (results[m.id]) {
+                const pred = predictions[`${m.id}-${u}`];
+                pts += calculatePoints(pred, results[m.id]);
+            }
+        });
+        return pts;
+    };
+
     const getMatchLeader = (u1, u2, s1, s2, phase) => {
         if (!u1 && !u2) return null;
         if (!u1) return u2;
@@ -172,6 +183,12 @@ export default function Home() {
         
         if (st1.exacts > st2.exacts) return u1;
         if (st2.exacts > st1.exacts) return u2;
+
+        const tp1 = getTotalPoints(u1);
+        const tp2 = getTotalPoints(u2);
+        
+        if (tp1 > tp2) return u1;
+        if (tp2 > tp1) return u2;
         
         return s1 < s2 ? u1 : u2;
     };
