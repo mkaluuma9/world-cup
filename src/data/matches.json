@@ -1,5 +1,19 @@
 [
     {
+        "id": 101,
+        "team1": "France",
+        "team2": "Spain",
+        "group": "Semi-finals",
+        "date": "2026-07-14T19:00:00Z"
+    },
+    {
+        "id": 102,
+        "team1": "England",
+        "team2": "Argentina",
+        "group": "Semi-finals",
+        "date": "2026-07-15T19:00:00Z"
+    },
+    {
         "id": 97,
         "team1": "France",
         "team2": "Morocco",
