@@ -1,5 +1,19 @@
 [
     {
+        "id": 103,
+        "team1": "France",
+        "team2": "England",
+        "group": "Bronze final",
+        "date": "2026-07-18T21:00:00Z"
+    },
+    {
+        "id": 104,
+        "team1": "Spain",
+        "team2": "Argentina",
+        "group": "Final",
+        "date": "2026-07-19T19:00:00Z"
+    },
+    {
         "id": 101,
         "team1": "France",
         "team2": "Spain",
