@@ -140,7 +140,7 @@ export default function Home() {
     };
 
     const isPhaseComplete = (phase) => {
-        const phaseMatches = matches.filter(m => m.group === phase);
+        const phaseMatches = matches.filter(m => phase === 'Final' ? (m.group === 'Final' || m.group === 'Bronze final') : m.group === phase);
         if (phaseMatches.length === 0) return false;
         return phaseMatches.every(m => results[m.id]);
     };
@@ -148,7 +148,7 @@ export default function Home() {
     const getPhaseStats = (u, phase) => {
         let pts = 0;
         let exacts = 0;
-        matches.filter(m => m.group === phase).forEach(m => {
+        matches.filter(m => phase === 'Final' ? (m.group === 'Final' || m.group === 'Bronze final') : m.group === phase).forEach(m => {
             if (results[m.id]) {
                 const pred = predictions[`${m.id}-${u}`];
                 const p = calculatePoints(pred, results[m.id]);
